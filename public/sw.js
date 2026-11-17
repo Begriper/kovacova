@@ -1,5 +1,5 @@
 /* Offline podpora: aplikácia funguje aj bez internetu po prvom otvorení. */
-const CACHE = "procedury-v1";
+const CACHE = "procedury-v2";
 const ASSETS = ["./", "index.html", "manifest.webmanifest", "icon.svg", "icon-192.png", "icon-512.png", "apple-touch-icon.png",
   "kalendar-bez.ics", "kalendar-10.ics", "kalendar-15.ics", "kalendar-30.ics", "kalendar-60.ics", "kalendar-30-10.ics"];
 self.addEventListener("install", (e) => { e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ASSETS)).then(() => self.skipWaiting())); });

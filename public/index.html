@@ -251,6 +251,7 @@ nav.tabs button.on{color:var(--accent)}
         <li>Čas pripomienky si potom vieš pri každej udalosti zmeniť priamo v kalendári.</li>
       </ol>
       <p class="muted">Súbor importuj iba raz – opakovaný import môže vytvoriť duplikáty.</p>
+      <p class="muted"><b>Zobrali ťa skôr?</b> Procedúru hneď odškrtni v záložke Deň – aplikácia ju preskočí v „Najbližšia procedúra“ a označí ju ako „skôr“. Pripomienka v kalendári sa ozve aj tak, tú ignoruj.</p>
     </div>
 
     <div class="sec"><h2>Pravidlá z preukazu</h2></div>
@@ -449,11 +450,13 @@ function renderHero(){
   $("clock").textContent = `${cap(WD[wdOf(today)])} ${localHM(n)}`;
   const h = +localHM(n).slice(0, 2);
   $("greet").textContent = (h < 10 ? "Dobré ráno" : h < 18 ? "Dobrý deň" : "Dobrý večer") + ", tu je tvoj plán";
-  const cur = EVENTS.find(e => e.start <= n && n < endOf(e));
-  const next = EVENTS.find(e => e.start > n);
+  /* odškrtnuté (aj tie absolvované skôr) sa preskakujú */
+  const open = e => !checked[e.id];
+  const cur = EVENTS.find(e => open(e) && e.start <= n && n < endOf(e));
+  const next = EVENTS.find(e => open(e) && e.start > n);
   let html = "";
   if (cur) {
-    const after = EVENTS.find(e => e.start > cur.start && e.date === cur.date);
+    const after = EVENTS.find(e => open(e) && e.start > cur.start && e.date === cur.date);
     html = `<div class="label"><span class="live"></span>Práve prebieha</div>
       <div class="main"><div class="bigtime tnum">${cur.time}</div><div><div class="what">${esc(cur.name)}</div><div class="where">${esc(cur.place)}${cur.dur ? " · do ~" + hm(endOf(cur)) : ""}</div></div></div>
       ${after ? `<div class="count ${transition(cur, after).tight ? "urgent" : ""}"><span>Potom ${after.time} · ${esc(after.name)}</span><span class="tnum">${esc(after.area)}</span></div>` : `<div class="then">Dnes je to posledná procedúra.</div>`}`;
@@ -468,8 +471,8 @@ function renderHero(){
       else when = `O ${dur(toStart)} · príchod ${next.arrival}`;
     } else if (tomorrow) when = `Zajtra · príchod ${next.arrival}`;
     else when = `${cap(WD[wdOf(next.date)])} ${dayShort(next.date)} · príchod ${next.arrival}`;
-    const later = EVENTS.filter(e => e.date === next.date && e.start > next.start);
-    const todayLeft = EVENTS.filter(e => e.date === today && e.start > n).length;
+    const later = EVENTS.filter(e => open(e) && e.date === next.date && e.start > next.start);
+    const todayLeft = EVENTS.filter(e => open(e) && e.date === today && e.start > n).length;
     const lbl = sameDay ? `Najbližšia procedúra${todayLeft > 1 ? ` · dnes ešte ${todayLeft}` : ""}` : (n < EVENTS[0].start ? "Prvá procedúra" : "Dnes už máš voľno – najbližšia");
     html = `<div class="label">${lbl}</div>
       <div class="main"><div class="bigtime tnum">${next.time}</div><div><div class="what">${esc(next.name)}</div><div class="where">${esc(next.place)}${next.note ? " · " + esc(next.note) : ""}</div></div></div>
@@ -493,6 +496,13 @@ function renderStrip(){
       <div class="dots">${items.map(e => `<i class="${checked[e.id] ? "d" : ""}"></i>`).join("")}</div></button>`;
   }).join("");
 }
+/* checked[id] = čas odškrtnutia (ms); staršie záznamy môžu byť len true */
+function doneLabel(e){
+  const v = checked[e.id]; if (typeof v !== "number") return "hotovo";
+  const d = new Date(v);
+  if (localDate(d) !== e.date) return "hotovo";
+  return v < e.start.getTime() ? `skôr · ${localHM(d)}` : "hotovo";
+}
 function checkSVG(){ return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>`; }
 function renderDay(){
   const items = BY_DATE[selDate], n = now(), today = localDate(n);
@@ -503,7 +513,10 @@ function renderDay(){
   $("dayMeta").innerHTML = `${items.length} ${plural(items.length,"procedúra","procedúry","procedúr")}<br>${doneN ? `hotovo ${doneN}/${items.length}` : `${items[0].time} – ~${hm(endOf(items.at(-1)))}`}`;
   let html = "";
   items.forEach((e, i) => {
-    if (i > 0) { const t = transition(items[i-1], e); html += `<div class="gap ${t.tight ? "tight" : ""}">${t.tight ? "⚠ " : ""}${esc(t.text)}</div>`; }
+    if (i > 0) {
+      const t = transition(items[i-1], e), tight = t.tight && !checked[items[i-1].id] && !checked[e.id];
+      html += `<div class="gap ${tight ? "tight" : ""}">${tight ? "⚠ " : ""}${esc(t.text)}</div>`;
+    }
     const isCur = e.start <= n && n < endOf(e);
     const missed = !checked[e.id] && endOf(e) < n;
     const tags = [];
@@ -512,7 +525,7 @@ function renderDay(){
     if (e.dur) tags.push(`<span class="tag">${e.dur} min</span>`);
     tags.push(`<span class="tag">budova ${esc(e.area)}</span>`);
     html += `<div class="it ${checked[e.id] ? "done" : ""} ${isCur ? "cur" : ""} ${missed ? "missed" : ""}" style="--c:${CAT_COLOR[e.cat]}">
-      <div class="t tnum">${e.time}<small>${missed ? "neodškrtnuté" : "príď " + e.arrival}</small></div>
+      <div class="t tnum">${e.time}<small>${checked[e.id] ? doneLabel(e) : missed ? "neodškrtnuté" : "príď " + e.arrival}</small></div>
       <div><div class="n">${esc(e.name)}</div><div class="p">${esc(e.place)}</div><div class="tags">${tags.join("")}</div></div>
       <button type="button" class="chk" data-check="${e.id}" aria-pressed="${!!checked[e.id]}" aria-label="Absolvované: ${esc(e.name)} ${e.time}">${checkSVG()}</button></div>`;
   });
@@ -629,7 +642,8 @@ $("icsBtn").addEventListener("click", ev => {
 $("alarm").addEventListener("change", () => { const h = icsHref(); if (h) $("icsBtn").setAttribute("href", h); });
 $("csvBtn").addEventListener("click", () => {
   const rows = [["Dátum","Deň","Čas","Príchod","Procedúra","Miesto","Poznámka","Stav"], ...EVENTS.map(e =>
-    [e.date, WD[wdOf(e.date)], e.time, e.arrival, e.name, e.place, e.note || "", checked[e.id] ? "Absolvované" : "Naplánované"])];
+    [e.date, WD[wdOf(e.date)], e.time, e.arrival, e.name, e.place, e.note || "",
+     checked[e.id] ? "Absolvované" + (typeof checked[e.id] === "number" ? " (odškrtnuté " + localDate(new Date(checked[e.id])) + " " + localHM(new Date(checked[e.id])) + ")" : "") : "Naplánované"])];
   const csv = "\ufeff" + rows.map(r => r.map(s => `"${String(s).replace(/"/g,'""')}"`).join(";")).join("\r\n");
   const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([csv], {type:"text/csv;charset=utf-8"}));
   a.download = "moje-procedury.csv"; document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 5000);
@@ -657,9 +671,10 @@ document.querySelectorAll("nav.tabs button").forEach(b => b.addEventListener("cl
 $("strip").addEventListener("click", ev => { const b = ev.target.closest("[data-day]"); if (b) selectDay(b.dataset.day, true); });
 $("dayList").addEventListener("click", ev => {
   const b = ev.target.closest("[data-check]"); if (!b) return;
-  const id = +b.dataset.check; checked[id] = !checked[id]; if (!checked[id]) delete checked[id]; save();
-  renderStrip(); renderDay(); renderHero();
-  if (checked[id]) { const e = EVENTS[id - 1]; toast(`✓ ${e.name} – absolvované`); if (navigator.vibrate) navigator.vibrate(15); }
+  const id = +b.dataset.check, e = EVENTS[id - 1];
+  if (checked[id]) delete checked[id]; else checked[id] = now().getTime();
+  save(); renderStrip(); renderDay(); renderHero();
+  if (checked[id]) { toast(`✓ ${e.name} – absolvované${checked[id] < e.start.getTime() ? " skôr" : ""}`); if (navigator.vibrate) navigator.vibrate(15); }
 });
 $("prevDay").addEventListener("click", () => { const i = DAYS.indexOf(selDate); if (i > 0) selectDay(DAYS[i-1], true); });
 $("nextDay").addEventListener("click", () => { const i = DAYS.indexOf(selDate); if (i < DAYS.length - 1) selectDay(DAYS[i+1], true); });
