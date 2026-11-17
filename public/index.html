@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0c6f78">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Procedúry">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Moje procedúry</title>
+<style>
+:root{
+  --bg:#eef3f6;--card:#ffffff;--ink:#132a3e;--muted:#5b6f82;--line:#dfe7ed;--soft:#e6f2f3;
+  --accent:#0c6f78;--accent-2:#0f8f8a;--on-accent:#ffffff;
+  --warn:#9a4a06;--warn-bg:#fff1dc;--ok:#157a3c;--ok-bg:#e4f5ea;--danger:#b42318;
+  --pool:#2a6fc4;--bath:#0e8f84;--move:#3b8a35;--heat:#c86f14;--mass:#7d50bd;--laser:#c43a60;
+  --shadow:0 6px 22px rgba(16,42,66,.08);
+  --hero1:#0c4f6b;--hero2:#0c7c80;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0d151d;--card:#16212c;--ink:#e5edf4;--muted:#94a6b7;--line:#25354a;--soft:#15313a;
+    --accent:#2bb3b0;--accent-2:#3cc7bf;--on-accent:#06252a;
+    --warn:#f6b453;--warn-bg:#3a2810;--ok:#5fd68c;--ok-bg:#123120;--danger:#ff7a6b;
+    --pool:#6ea8f0;--bath:#3cc7b5;--move:#7cc96f;--heat:#f0a050;--mass:#b493ee;--laser:#f17b9b;
+    --shadow:0 6px 22px rgba(0,0,0,.35);
+    --hero1:#0b3346;--hero2:#0b5257;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0d151d;--card:#16212c;--ink:#e5edf4;--muted:#94a6b7;--line:#25354a;--soft:#15313a;
+  --accent:#2bb3b0;--accent-2:#3cc7bf;--on-accent:#06252a;
+  --warn:#f6b453;--warn-bg:#3a2810;--ok:#5fd68c;--ok-bg:#123120;--danger:#ff7a6b;
+  --pool:#6ea8f0;--bath:#3cc7b5;--move:#7cc96f;--heat:#f0a050;--mass:#b493ee;--laser:#f17b9b;
+  --shadow:0 6px 22px rgba(0,0,0,.35);--hero1:#0b3346;--hero2:#0b5257;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink)}
+body{font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;padding-bottom:calc(76px + env(safe-area-inset-bottom));-webkit-font-smoothing:antialiased}
+button,select,input{font:inherit;color:inherit}
+button{cursor:pointer}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px}
+.tnum{font-variant-numeric:tabular-nums}
+
+/* top */
+.top{background:linear-gradient(140deg,var(--hero1),var(--hero2));color:#fff;padding:calc(14px + env(safe-area-inset-top)) 0 64px}
+.top .row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.top .brand{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700;opacity:.8}
+.top .clock{font-size:13px;opacity:.85}
+.top h1{margin:6px 0 0;font-size:22px;line-height:1.2;font-weight:750}
+
+/* hero card */
+.hero{background:var(--card);border-radius:20px;box-shadow:var(--shadow);margin-top:-50px;padding:16px;position:relative;border:1px solid var(--line)}
+.hero .label{font-size:12px;font-weight:750;letter-spacing:1px;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:8px}
+.hero .label .live{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 var(--ok);animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 60%,transparent)}70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.hero .main{display:flex;gap:14px;align-items:center;margin-top:8px}
+.hero .bigtime{font-size:40px;font-weight:850;line-height:1;letter-spacing:-1px}
+.hero .what{font-size:19px;font-weight:750;line-height:1.2}
+.hero .where{color:var(--muted);font-size:14px;margin-top:3px}
+.hero .count{margin-top:12px;padding:10px 12px;border-radius:12px;background:var(--soft);font-weight:700;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.hero .count.urgent{background:var(--warn-bg);color:var(--warn)}
+.hero .count.now{background:var(--ok-bg);color:var(--ok)}
+.hero .then{margin-top:10px;font-size:14px;color:var(--muted)}
+.hero .then b{color:var(--ink)}
+
+/* section heads */
+.sec{display:flex;justify-content:space-between;align-items:baseline;margin:22px 2px 10px;gap:10px}
+.sec h2{font-size:18px;margin:0}
+.sec .meta{font-size:13px;color:var(--muted);text-align:right}
+
+/* day strip */
+.strip{display:flex;gap:8px;overflow-x:auto;padding:4px 16px 8px;margin:14px -16px 0;scroll-snap-type:x proximity;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.dchip{flex:0 0 auto;width:54px;border:1px solid var(--line);background:var(--card);border-radius:14px;padding:7px 0 8px;text-align:center;scroll-snap-align:center}
+.dchip .wd{font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase}
+.dchip .dn{font-size:19px;font-weight:800;line-height:1.2}
+.dchip .dots{display:flex;justify-content:center;gap:3px;margin-top:3px;height:6px}
+.dchip .dots i{width:5px;height:5px;border-radius:50%;background:var(--muted);opacity:.45}
+.dchip .dots i.d{background:var(--ok);opacity:1}
+.dchip.past{opacity:.55}
+.dchip.today{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.dchip.sel{background:var(--accent);border-color:var(--accent);color:var(--on-accent);opacity:1}
+.dchip.sel .wd{color:var(--on-accent);opacity:.85}
+.dchip.sel .dots i{background:var(--on-accent)}
+.daynav{display:flex;gap:8px;margin-top:4px}
+.daynav button{flex:1;border:1px solid var(--line);background:var(--card);border-radius:12px;min-height:42px;font-weight:700;font-size:14px}
+
+/* items */
+.list{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.it{display:grid;grid-template-columns:62px 1fr 44px;gap:10px;align-items:center;padding:13px 12px 13px 14px;position:relative}
+.it::before{content:"";position:absolute;left:0;top:10px;bottom:10px;width:4px;border-radius:0 4px 4px 0;background:var(--c)}
+.it .t{font-size:21px;font-weight:850;letter-spacing:-.4px}
+.it .t small{display:block;font-size:11px;font-weight:650;color:var(--muted);letter-spacing:0}
+.it .n{font-weight:750;line-height:1.25}
+.it .p{font-size:13px;color:var(--muted);margin-top:2px}
+.it .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.tag{font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:99px;background:var(--soft);color:var(--ink)}
+.tag.note{background:color-mix(in srgb,var(--c) 16%,transparent);color:var(--ink)}
+.chk{width:44px;height:44px;border-radius:12px;border:2px solid var(--line);background:transparent;display:grid;place-items:center;padding:0}
+.chk svg{width:22px;height:22px;opacity:0}
+.it.done .chk{background:var(--ok);border-color:var(--ok)}
+.it.done .chk svg{opacity:1;color:#fff}
+.it.done .n{text-decoration:line-through;color:var(--muted)}
+.it.done .t{color:var(--muted)}
+.it.missed .t small{color:var(--warn)}
+.it.cur{background:var(--ok-bg)}
+.gap{font-size:12.5px;color:var(--muted);padding:5px 14px 5px 86px;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);background:color-mix(in srgb,var(--bg) 55%,var(--card))}
+.gap.tight{color:var(--warn);background:var(--warn-bg);font-weight:700}
+.list > .it + .it{border-top:1px solid var(--line)}
+.dayfoot{font-size:13px;color:var(--muted);margin:8px 4px 0}
+
+/* pobyt */
+.chips{display:flex;gap:7px;overflow-x:auto;padding:2px 16px 6px;margin:0 -16px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:8px 12px;font-size:13.5px;font-weight:700;display:flex;gap:6px;align-items:center;min-height:40px}
+.chip i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.chip.on{background:var(--ink);color:var(--card);border-color:var(--ink)}
+.toggle{display:flex;align-items:center;gap:10px;font-size:14px;margin:10px 2px;color:var(--muted);font-weight:600}
+.toggle input{width:20px;height:20px;accent-color:var(--accent)}
+.week{margin-top:16px}
+.week h3{font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin:0 4px 8px}
+.dcard{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:10px;overflow:hidden}
+.dcard.isToday{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.dcard.isPast{opacity:.7}
+.dhead{display:flex;justify-content:space-between;align-items:center;padding:11px 14px;background:color-mix(in srgb,var(--soft) 60%,var(--card));width:100%;border:0;text-align:left}
+.dhead b{font-size:15px}
+.dhead span{font-size:12.5px;color:var(--muted);font-weight:600}
+.row{display:grid;grid-template-columns:50px 12px 1fr auto;gap:8px;align-items:center;padding:9px 14px;border-top:1px solid var(--line);font-size:14.5px}
+.row .tm{font-weight:800}
+.row i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.row .pl{font-size:12px;color:var(--muted);white-space:nowrap}
+.row.done .nm{text-decoration:line-through;color:var(--muted)}
+
+/* stats */
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:12px}
+.card h3{margin:0 0 8px;font-size:16px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 8px;text-align:center}
+.kpi b{display:block;font-size:26px;font-weight:850;line-height:1.1}
+.kpi span{font-size:12px;color:var(--muted)}
+.bar{height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar > b{display:block;height:100%;background:var(--c,var(--ok));border-radius:99px;transition:width .3s}
+.prow{padding:11px 0;border-top:1px solid var(--line)}
+.prow:first-of-type{border-top:0}
+.prow .top2{display:flex;justify-content:space-between;gap:10px;align-items:baseline;margin-bottom:6px}
+.prow .nm{font-weight:750;display:flex;gap:8px;align-items:center}
+.prow .nm i{width:10px;height:10px;border-radius:50%;background:var(--c)}
+.prow .cnt{font-weight:800;white-space:nowrap}
+.prow .nx{font-size:12.5px;color:var(--muted);margin-top:5px}
+
+/* info */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:14px;min-height:48px;padding:0 16px;font-weight:750;background:var(--soft);color:var(--ink);text-decoration:none}
+.btn.primary{background:var(--accent);color:var(--on-accent)}
+.btn.block{width:100%}
+.field{display:block;margin:10px 0}
+.field small{display:block;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-bottom:5px}
+.field select{width:100%;min-height:48px;border-radius:12px;border:1px solid var(--line);background:var(--card);padding:0 12px}
+.steps{margin:10px 0 0;padding-left:20px;font-size:14.5px}
+.steps li{margin:4px 0}
+.muted{color:var(--muted);font-size:13.5px}
+details{border-top:1px solid var(--line);padding:10px 0}
+details:first-of-type{border-top:0}
+summary{font-weight:750;cursor:pointer;display:flex;gap:8px;align-items:center;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary i{width:10px;height:10px;border-radius:50%;background:var(--c);flex:0 0 auto}
+summary::after{content:"+";margin-left:auto;color:var(--muted);font-weight:800}
+details[open] summary::after{content:"–"}
+details p{margin:8px 0 0;font-size:14.5px}
+.src{font-size:12px;color:var(--muted);word-break:break-word}
+.src a{color:var(--accent)}
+
+/* bottom nav */
+nav.tabs{position:fixed;left:0;right:0;bottom:0;background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);z-index:10}
+nav.tabs .in{max-width:640px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+nav.tabs button{border:0;background:transparent;padding:9px 0 8px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11.5px;font-weight:700;color:var(--muted);min-height:58px}
+nav.tabs svg{width:24px;height:24px}
+nav.tabs button.on{color:var(--accent)}
+.view{display:none}.view.on{display:block}
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--card);padding:10px 16px;border-radius:12px;font-size:14px;font-weight:650;opacity:0;transition:.25s;pointer-events:none;z-index:20;max-width:calc(100% - 32px);text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media (min-width:600px){.top h1{font-size:26px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="row"><span class="brand">ŠLÚ Marína · Kováčová</span><span class="clock tnum" id="clock"></span></div>
+    <h1 id="greet">Moje procedúry</h1>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" id="hero" aria-live="polite"></section>
+
+  <!-- DNES -->
+  <section class="view on" id="v-dnes">
+    <div class="strip" id="strip" role="tablist" aria-label="Dni pobytu"></div>
+    <div class="sec"><h2 id="dayTitle"></h2><div class="meta" id="dayMeta"></div></div>
+    <div class="list" id="dayList"></div>
+    <div class="dayfoot" id="dayFoot"></div>
+    <div class="daynav"><button id="prevDay" type="button">‹ Predošlý deň</button><button id="goToday" type="button">Dnes</button><button id="nextDay" type="button">Ďalší deň ›</button></div>
+  </section>
+
+  <!-- POBYT -->
+  <section class="view" id="v-pobyt">
+    <div class="sec"><h2>Celý pobyt</h2><div class="meta" id="pobytMeta"></div></div>
+    <div class="chips" id="chips"></div>
+    <label class="toggle"><input type="checkbox" id="hidePast" checked> Skryť dni, ktoré už prešli</label>
+    <div id="weeks"></div>
+  </section>
+
+  <!-- PREHĽAD -->
+  <section class="view" id="v-prehlad">
+    <div class="sec"><h2>Prehľad liečby</h2><div class="meta">16. 11. – 13. 12. 2026</div></div>
+    <div class="kpis" id="kpis"></div>
+    <div class="card" style="margin-top:12px">
+      <h3>Priebeh</h3>
+      <div class="bar" style="--c:var(--ok)"><b id="totalBar"></b></div>
+      <div class="muted" id="totalText" style="margin-top:6px"></div>
+    </div>
+    <div class="card"><h3>Podľa druhu procedúry</h3><div id="perProc"></div></div>
+    <div class="card"><h3>Podľa týždňov</h3><div id="perWeek"></div></div>
+    <div class="card"><h3>Podľa miesta</h3><div id="perPlace"></div></div>
+  </section>
+
+  <!-- INFO -->
+  <section class="view" id="v-info">
+    <div class="sec"><h2>Upozornenia v telefóne</h2></div>
+    <div class="card">
+      <p style="margin:0 0 6px">Najspoľahlivejšie upozornenia ti dá <b>kalendár v telefóne</b>. Stiahneš jeden súbor a všetkých 84 procedúr sa ti pridá do kalendára aj s pripomienkou. Funguje to aj bez internetu a keď je táto aplikácia zatvorená.</p>
+      <label class="field"><small>Pripomenúť</small>
+        <select id="alarm">
+          <option value="0">Bez pripomienky</option>
+          <option value="10">10 minút pred začiatkom</option>
+          <option value="15" selected>15 minút pred začiatkom</option>
+          <option value="30">30 minút pred začiatkom</option>
+          <option value="60">1 hodinu pred začiatkom</option>
+          <option value="30-10">2× – 30 aj 10 minút pred</option>
+        </select>
+      </label>
+      <a class="btn primary block" id="icsBtn" href="#">Pridať do kalendára (84 procedúr)</a>
+      <ol class="steps">
+        <li><b>iPhone:</b> ťukni na tlačidlo v Safari → „Pridať všetko“ → vyber kalendár.</li>
+        <li><b>Android:</b> súbor sa stiahne → otvor ho z upozornenia alebo zo „Stiahnuté“ → vyber Kalendár (Samsung/Google) → Importovať.</li>
+        <li>Čas pripomienky si potom vieš pri každej udalosti zmeniť priamo v kalendári.</li>
+      </ol>
+      <p class="muted">Súbor importuj iba raz – opakovaný import môže vytvoriť duplikáty.</p>
+    </div>
+
+    <div class="sec"><h2>Pravidlá z preukazu</h2></div>
+    <div class="card">
+      <ul class="steps" style="margin-top:0">
+        <li>Na procedúru príď <b>5 minút pred začiatkom</b>.</li>
+        <li>Na procedúry aj lekársku vizitu nos <b>kúpeľný preukaz</b>.</li>
+        <li>Ak meškáš alebo neprídeš z vlastnej viny, procedúra sa nenahrádza.</li>
+        <li>Prečasovanie procedúry je spoplatnené <b>3 €</b>.</li>
+        <li>Pod vplyvom alkoholu sa procedúra neposkytne. Informuj personál o kontraindikáciách.</li>
+      </ul>
+    </div>
+
+    <div class="sec"><h2>Procedúry</h2><div class="meta">ťukni pre detail</div></div>
+    <div class="card" id="procInfo"></div>
+
+    <div class="sec"><h2>Kontakt a praktické</h2></div>
+    <div class="card">
+      <ul class="steps" style="margin-top:0">
+        <li><b>Recepcia:</b> <a href="tel:+421455208111" style="color:var(--accent)">+421 45 5208 111</a></li>
+        <li><b>Adresa:</b> Sládkovičova 311/3, 962 37 Kováčová</li>
+        <li><b>Dokúpenie procedúr:</b> recepcia, Po–Pi 12:45–14:45</li>
+        <li><b>Na bazény:</b> plavky (ideálne 2 kusy, nie bermudy), kúpacia čiapka, uterák, šľapky</li>
+        <li><b>B2 / B3</b> sú označenia z preukazu – kde presne sú, ti povedia na recepcii.</li>
+      </ul>
+      <p class="src">Zdroj: <a href="https://marinakovacova.sk/kontakty/" target="_blank" rel="noopener">marinakovacova.sk</a> – údaje z webu over na mieste, môžu sa meniť.</p>
+    </div>
+
+    <div class="sec"><h2>Údaje</h2></div>
+    <div class="card">
+      <p class="muted" style="margin-top:0">Odškrtnuté procedúry sa ukladajú iba v tomto telefóne (v tomto prehliadači).</p>
+      <div style="display:grid;gap:8px">
+        <button class="btn block" id="csvBtn" type="button">Exportovať môj stav (.csv)</button>
+        <button class="btn block" id="resetBtn" type="button">Zrušiť všetky odškrtnutia</button>
+      </div>
+      <p class="muted">Rozpis podľa kúpeľného preukazu (3 strany, vystavený 16. 11. 2026). Ak ti v ústave niečo prečasujú, uprav si to v kalendári.</p>
+    </div>
+  </section>
+</main>
+
+<nav class="tabs" aria-label="Navigácia">
+  <div class="in">
+    <button type="button" data-view="dnes" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Deň</button>
+    <button type="button" data-view="pobyt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Pobyt</button>
+    <button type="button" data-view="prehlad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Prehľad</button>
+    <button type="button" data-view="info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>Upozornenia</button>
+  </div>
+</nav>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/*SHARED-START*/
+const PROC = {
+  RB:  {name:"Rehabilitačný bazén",       place:"Bazén B3",          area:"B3", dur:20, temp:31, cat:"pool"},
+  LMB: {name:"Liečebný minerálny bazén",  place:"Bazén B3",          area:"B3", dur:20, temp:36, cat:"pool"},
+  HKT: {name:"Hydrokinezioterapia",       place:"Bazén B3",          area:"B3", cat:"pool"},
+  KN:  {name:"Kneippov kúpeľ",            place:"Bazén B3",          area:"B3", dur:10, cat:"bath"},
+  KV:  {name:"Kanadská vaňa",             place:"Bazén B3",          area:"B3", cat:"bath"},
+  VK:  {name:"Vírivý kúpeľ DKK",          place:"Vodoliečba B2",     area:"B2", cat:"bath", note:"dolné končatiny"},
+  PK:  {name:"Perličkový kúpeľ",          place:"Vodoliečba B2 ZD",  area:"B2", cat:"bath"},
+  TT:  {name:"Termoterapia",              place:"Vodoliečba B2",     area:"B2", cat:"heat", note:"chrbát"},
+  LTV: {name:"Liečebná TV",               place:"ILTV B2 Miľanová",  area:"B2", cat:"move", note:"individuálna"},
+  MAS: {name:"Klasická masáž",            place:"B3 Fodor",          area:"B3", dur:15, cat:"mass", note:"chrbát"},
+  LAS: {name:"Laseroterapia",             place:"Laseroterapia B2",  area:"B2", cat:"laser", note:"PČK"}
+};
+/* Rozpis presne podľa kúpeľného preukazu (strany 1/3 – 3/3) */
+const RAW = `
+2026-11-16|13:30 RB,14:00 KV
+2026-11-17|09:30 VK,11:00 TT,13:30 LMB
+2026-11-18|12:40 MAS,13:30 LMB
+2026-11-19|09:00 VK,12:40 MAS,13:30 RB
+2026-11-20|10:00 TT,13:30 KN,14:00 KV
+2026-11-21|13:45 KN,14:00 LMB
+2026-11-22|10:20 LMB
+2026-11-23|09:30 TT,13:00 KV,13:30 LMB
+2026-11-24|09:00 TT,10:30 VK,12:30 LTV
+2026-11-25|12:30 LTV,13:30 KN,14:00 RB
+2026-11-26|08:40 MAS,11:00 PK,12:30 LTV,14:00 LMB
+2026-11-27|08:00 LTV,13:00 KN,13:30 LMB,14:40 LAS
+2026-11-28|10:20 LMB
+2026-11-29|12:30 KN,13:00 LMB
+2026-11-30|08:00 PK,08:30 TT,10:45 RB,13:20 LAS
+2026-12-01|08:00 LTV,10:00 VK,14:00 RB,14:30 HKT
+2026-12-02|10:30 PK,12:30 LTV,14:00 RB,14:30 HKT
+2026-12-03|08:00 LTV,09:40 MAS,13:30 RB
+2026-12-04|08:00 PK,10:00 TT,12:30 LTV,13:40 KV,14:40 LAS
+2026-12-05|10:20 RB
+2026-12-06|10:15 KN,10:45 RB
+2026-12-07|08:30 PK,09:00 TT,12:30 LTV,14:00 KV,14:30 HKT
+2026-12-08|08:00 LTV,10:10 MAS,12:10 HKT,12:30 RB
+2026-12-09|08:00 LTV,12:10 HKT,12:30 LMB,14:20 LAS
+2026-12-10|08:30 PK,10:10 MAS,12:10 HKT,12:30 RB
+2026-12-11|08:00 LTV,09:30 VK,12:10 HKT,12:30 LMB
+2026-12-12|12:15 KN,12:30 RB
+2026-12-13|12:15 KN,12:30 LMB
+`;
+/* Pobyt je celý v zimnom čase (SEČ, UTC+01:00) */
+const OFFSET = "+01:00", MIN = 60000;
+function buildEvents(){
+  const out = []; let id = 0;
+  for (const line of RAW.trim().split("\n")) {
+    const [date, rest] = line.split("|");
+    for (const part of rest.split(",")) {
+      const [time, code] = part.trim().split(" ");
+      const p = PROC[code]; if (!p) throw new Error("Neznámy kód " + code);
+      const start = new Date(`${date}T${time}:00${OFFSET}`);
+      out.push({id: ++id, date, time, code, ...p, start, arrival: hm(new Date(start - 5*MIN))});
+    }
+  }
+  return out;
+}
+function hm(d){ const l = new Date(d.getTime() + 3600000); return String(l.getUTCHours()).padStart(2,"0") + ":" + String(l.getUTCMinutes()).padStart(2,"0"); }
+function icsEsc(s){ return String(s).replace(/\\/g,"\\\\").replace(/;/g,"\\;").replace(/,/g,"\\,").replace(/\r?\n/g,"\\n"); }
+function icsFold(line){
+  const enc = new TextEncoder(); let out = "", cur = "", bytes = 0;
+  for (const ch of line) { const b = enc.encode(ch).length;
+    if (bytes + b > 73) { out += cur + "\r\n "; cur = ""; bytes = 1; }
+    cur += ch; bytes += b; }
+  return out + cur;
+}
+function icsDate(d){ return d.toISOString().replace(/[-:]/g,"").replace(/\.\d{3}/,""); }
+function buildICS(events, alarms){
+  const stamp = "20261116T100000Z";
+  const L = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//kupele-procedury//SK","CALSCALE:GREGORIAN","METHOD:PUBLISH",
+             "X-WR-CALNAME:Kúpele Kováčová – procedúry","X-WR-TIMEZONE:Europe/Bratislava"];
+  for (const e of events) {
+    const end = new Date(e.start.getTime() + (e.dur || 20) * MIN);
+    const info = [`Príď o ${e.arrival} (5 min vopred). Vezmi kúpeľný preukaz.`];
+    if (e.note) info.push(`Poznámka: ${e.note}.`);
+    if (e.temp) info.push(`Teplota ${e.temp} °C.`);
+    info.push(e.dur ? `Trvanie ${e.dur} min.` : "Trvanie na preukaze neuvedené.");
+    L.push("BEGIN:VEVENT", `UID:kovacova-2026-${String(e.id).padStart(3,"0")}@procedury`, `DTSTAMP:${stamp}`,
+      `DTSTART:${icsDate(e.start)}`, `DTEND:${icsDate(end)}`,
+      `SUMMARY:${icsEsc(e.name + (e.note ? " (" + e.note + ")" : ""))}`,
+      `LOCATION:${icsEsc(e.place + " – ŠLÚ Marína Kováčová")}`,
+      `DESCRIPTION:${icsEsc(info.join("\n"))}`, "TRANSP:OPAQUE");
+    for (const m of alarms) L.push("BEGIN:VALARM","ACTION:DISPLAY",
+      `DESCRIPTION:${icsEsc(`${e.time} ${e.name} – ${e.place}`)}`, `TRIGGER:-PT${m}M`, "END:VALARM");
+    L.push("END:VEVENT");
+  }
+  L.push("END:VCALENDAR");
+  return L.map(icsFold).join("\r\n") + "\r\n";
+}
+/*SHARED-END*/
+
+/* ---------- aplikácia ---------- */
+const EVENTS = buildEvents();
+const TOTAL = EVENTS.length;
+const BY_DATE = {}; for (const e of EVENTS) (BY_DATE[e.date] ??= []).push(e);
+const DAYS = Object.keys(BY_DATE).sort();
+const CAT_COLOR = {pool:"var(--pool)",bath:"var(--bath)",move:"var(--move)",heat:"var(--heat)",mass:"var(--mass)",laser:"var(--laser)"};
+const WD = ["nedeľa","pondelok","utorok","streda","štvrtok","piatok","sobota"];
+const WD_SHORT = ["Ne","Po","Ut","St","Št","Pi","So"];
+const MONTH_G = {"11":"novembra","12":"decembra"};
+const WEEKS = [["2026-11-16","2026-11-22"],["2026-11-23","2026-11-29"],["2026-11-30","2026-12-06"],["2026-12-07","2026-12-13"]];
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+/* testovanie: ?now=2026-11-20T13:10 */
+const NOW_OVERRIDE = (() => { try { const v = new URLSearchParams(location.search).get("now"); return v ? new Date(v + (v.length <= 16 ? ":00" + OFFSET : "")).getTime() - Date.now() : 0; } catch(e) { return 0; } })();
+const now = () => new Date(Date.now() + NOW_OVERRIDE);
+const localDate = d => new Intl.DateTimeFormat("sv-SE",{timeZone:"Europe/Bratislava",year:"numeric",month:"2-digit",day:"2-digit"}).format(d);
+const localHM = d => new Intl.DateTimeFormat("sk-SK",{timeZone:"Europe/Bratislava",hour:"2-digit",minute:"2-digit"}).format(d);
+const wdOf = date => new Date(date + "T12:00:00" + OFFSET).getUTCDay();
+const dayLabel = date => { const [,m,d] = date.split("-"); return `${+d}. ${MONTH_G[m]}`; };
+const dayShort = date => { const [,m,d] = date.split("-"); return `${+d}. ${+m}.`; };
+const cap = s => s[0].toUpperCase() + s.slice(1);
+const endOf = e => new Date(e.start.getTime() + (e.dur || 20) * MIN);
+const plural = (n, one, few, many) => n === 1 ? one : (n >= 2 && n <= 4 ? few : many);
+function dur(mins){ mins = Math.max(0, Math.round(mins)); const h = Math.floor(mins/60), m = mins % 60; return h ? `${h} h${m ? " " + String(m).padStart(2,"0") + " min" : ""}` : `${m} min`; }
+
+const STORE = "marina_2026_checked_v1";
+let checked = {}; try { checked = JSON.parse(localStorage.getItem(STORE) || "{}") || {}; } catch(e) {}
+function save(){ try { localStorage.setItem(STORE, JSON.stringify(checked)); } catch(e) {} }
+let view = "dnes", selDate = null, filterCode = "";
+
+function todayInStay(){ const t = localDate(now()); if (t < DAYS[0]) return DAYS[0]; if (t > DAYS.at(-1)) return DAYS.at(-1); return t; }
+
+/* Prechod medzi dvoma procedúrami v ten istý deň */
+function transition(a, b){
+  const diff = (b.start - a.start) / MIN;
+  const moving = a.area !== b.area;
+  if (a.dur) {
+    const free = (b.start - endOf(a)) / MIN - 5;   /* čas od konca po odporúčaný príchod */
+    if (free < 0) return {tight:true, text:`Pozor: ${a.name.toLowerCase()} končí ${hm(endOf(a))}, na ďalšiu máš prísť o ${b.arrival}${moving ? " · presun " + a.area + " → " + b.area : ""}`};
+    if (free <= 10) return {tight:true, text:`Tesne: koniec ~${hm(endOf(a))}, ${free ? free + " min" : "hneď"} na presun${moving ? " " + a.area + " → " + b.area : ""}`};
+    return {tight:false, text:`Voľno ~${dur(free)} (koniec ~${hm(endOf(a))})`};
+  }
+  if (diff <= 30) return {tight:true, text:`Hneď nato – o ${dur(diff)} ďalšia${moving ? " · presun " + a.area + " → " + b.area : " (rovnaké miesto)"}`};
+  return {tight:false, text:`Ďalšia o ${dur(diff)}${moving ? " · iná budova " + b.area : ""}`};
+}
+
+/* ---------- HERO: čo ma čaká ---------- */
+function renderHero(){
+  const n = now(), today = localDate(n);
+  $("clock").textContent = `${cap(WD[wdOf(today)])} ${localHM(n)}`;
+  const h = +localHM(n).slice(0, 2);
+  $("greet").textContent = (h < 10 ? "Dobré ráno" : h < 18 ? "Dobrý deň" : "Dobrý večer") + ", tu je tvoj plán";
+  const cur = EVENTS.find(e => e.start <= n && n < endOf(e));
+  const next = EVENTS.find(e => e.start > n);
+  let html = "";
+  if (cur) {
+    const after = EVENTS.find(e => e.start > cur.start && e.date === cur.date);
+    html = `<div class="label"><span class="live"></span>Práve prebieha</div>
+      <div class="main"><div class="bigtime tnum">${cur.time}</div><div><div class="what">${esc(cur.name)}</div><div class="where">${esc(cur.place)}${cur.dur ? " · do ~" + hm(endOf(cur)) : ""}</div></div></div>
+      ${after ? `<div class="count ${transition(cur, after).tight ? "urgent" : ""}"><span>Potom ${after.time} · ${esc(after.name)}</span><span class="tnum">${esc(after.area)}</span></div>` : `<div class="then">Dnes je to posledná procedúra.</div>`}`;
+  } else if (next) {
+    const toStart = (next.start - n) / MIN, toArr = toStart - 5;
+    const sameDay = next.date === today;
+    const tomorrow = next.date === localDate(new Date(n.getTime() + 864e5));
+    let when, cls = "";
+    if (sameDay) {
+      if (toArr <= 0) { when = `Vyraz hneď – začína o ${dur(toStart)}`; cls = "urgent"; }
+      else if (toArr <= 20) { when = `Vyraz o ${dur(toArr)} (príchod ${next.arrival})`; cls = "urgent"; }
+      else when = `O ${dur(toStart)} · príchod ${next.arrival}`;
+    } else if (tomorrow) when = `Zajtra · príchod ${next.arrival}`;
+    else when = `${cap(WD[wdOf(next.date)])} ${dayShort(next.date)} · príchod ${next.arrival}`;
+    const later = EVENTS.filter(e => e.date === next.date && e.start > next.start);
+    const todayLeft = EVENTS.filter(e => e.date === today && e.start > n).length;
+    const lbl = sameDay ? `Najbližšia procedúra${todayLeft > 1 ? ` · dnes ešte ${todayLeft}` : ""}` : (n < EVENTS[0].start ? "Prvá procedúra" : "Dnes už máš voľno – najbližšia");
+    html = `<div class="label">${lbl}</div>
+      <div class="main"><div class="bigtime tnum">${next.time}</div><div><div class="what">${esc(next.name)}</div><div class="where">${esc(next.place)}${next.note ? " · " + esc(next.note) : ""}</div></div></div>
+      <div class="count ${cls}"><span>${when}</span></div>
+      ${later.length ? `<div class="then">Potom: ${later.map(e => `<b>${e.time}</b> ${esc(e.name)}`).join(" · ")}</div>` : ""}`;
+  } else {
+    const done = EVENTS.filter(e => checked[e.id]).length;
+    html = `<div class="label">Liečba ukončená</div><div class="main"><div><div class="what">Všetky procedúry sú za tebou 🎉</div><div class="where">Odškrtnutých ${done} z ${TOTAL}. Odchod 14. decembra.</div></div></div>`;
+  }
+  $("hero").innerHTML = html;
+}
+
+/* ---------- DEŇ ---------- */
+function renderStrip(){
+  const today = localDate(now());
+  $("strip").innerHTML = DAYS.map(d => {
+    const items = BY_DATE[d], wd = wdOf(d);
+    const cls = ["dchip", d < today ? "past" : "", d === today ? "today" : "", d === selDate ? "sel" : ""].join(" ");
+    return `<button type="button" class="${cls}" data-day="${d}" role="tab" aria-selected="${d === selDate}" aria-label="${WD[wd]} ${dayLabel(d)}, ${items.length} procedúr">
+      <div class="wd">${WD_SHORT[wd]}</div><div class="dn">${+d.slice(8)}</div>
+      <div class="dots">${items.map(e => `<i class="${checked[e.id] ? "d" : ""}"></i>`).join("")}</div></button>`;
+  }).join("");
+}
+function checkSVG(){ return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>`; }
+function renderDay(){
+  const items = BY_DATE[selDate], n = now(), today = localDate(n);
+  const wd = WD[wdOf(selDate)];
+  const rel = selDate === today ? "Dnes" : selDate === localDate(new Date(n.getTime() + 864e5)) ? "Zajtra" : cap(wd);
+  $("dayTitle").textContent = `${rel}, ${selDate === today || rel === "Zajtra" ? wd + " " : ""}${dayLabel(selDate)}`;
+  const doneN = items.filter(e => checked[e.id]).length;
+  $("dayMeta").innerHTML = `${items.length} ${plural(items.length,"procedúra","procedúry","procedúr")}<br>${doneN ? `hotovo ${doneN}/${items.length}` : `${items[0].time} – ~${hm(endOf(items.at(-1)))}`}`;
+  let html = "";
+  items.forEach((e, i) => {
+    if (i > 0) { const t = transition(items[i-1], e); html += `<div class="gap ${t.tight ? "tight" : ""}">${t.tight ? "⚠ " : ""}${esc(t.text)}</div>`; }
+    const isCur = e.start <= n && n < endOf(e);
+    const missed = !checked[e.id] && endOf(e) < n;
+    const tags = [];
+    if (e.note) tags.push(`<span class="tag note">${esc(e.note)}</span>`);
+    if (e.temp) tags.push(`<span class="tag">${e.temp} °C</span>`);
+    if (e.dur) tags.push(`<span class="tag">${e.dur} min</span>`);
+    tags.push(`<span class="tag">budova ${esc(e.area)}</span>`);
+    html += `<div class="it ${checked[e.id] ? "done" : ""} ${isCur ? "cur" : ""} ${missed ? "missed" : ""}" style="--c:${CAT_COLOR[e.cat]}">
+      <div class="t tnum">${e.time}<small>${missed ? "neodškrtnuté" : "príď " + e.arrival}</small></div>
+      <div><div class="n">${esc(e.name)}</div><div class="p">${esc(e.place)}</div><div class="tags">${tags.join("")}</div></div>
+      <button type="button" class="chk" data-check="${e.id}" aria-pressed="${!!checked[e.id]}" aria-label="Absolvované: ${esc(e.name)} ${e.time}">${checkSVG()}</button></div>`;
+  });
+  $("dayList").innerHTML = html;
+  const b2 = items.filter(e => e.area === "B2").length, b3 = items.length - b2;
+  $("dayFoot").textContent = `Budova B2: ${b2} · Budova B3: ${b3}` + (items.some(e => e.cat === "pool" || e.cat === "bath") ? " · Na bazén/kúpele: plavky, kúpacia čiapka, uterák, šľapky." : "");
+  const i = DAYS.indexOf(selDate);
+  $("prevDay").disabled = i === 0; $("nextDay").disabled = i === DAYS.length - 1;
+  $("prevDay").style.opacity = i === 0 ? .4 : 1; $("nextDay").style.opacity = i === DAYS.length - 1 ? .4 : 1;
+}
+function scrollStrip(smooth){
+  const el = $("strip").querySelector(".sel"); if (!el) return;
+  const s = $("strip"); s.scrollTo({left: el.offsetLeft - s.clientWidth/2 + el.clientWidth/2, behavior: smooth ? "smooth" : "auto"});
+}
+
+/* ---------- POBYT ---------- */
+function renderChips(){
+  const counts = {}; for (const e of EVENTS) counts[e.code] = (counts[e.code] || 0) + 1;
+  const codes = Object.keys(PROC).sort((a,b) => counts[b] - counts[a] || PROC[a].name.localeCompare(PROC[b].name,"sk"));
+  $("chips").innerHTML = `<button type="button" class="chip ${filterCode ? "" : "on"}" data-code="">Všetko · ${TOTAL}</button>` +
+    codes.map(c => `<button type="button" class="chip ${filterCode === c ? "on" : ""}" data-code="${c}" style="--c:${CAT_COLOR[PROC[c].cat]}"><i></i>${esc(PROC[c].name)} · ${counts[c]}</button>`).join("");
+}
+function renderPobyt(){
+  renderChips();
+  const today = localDate(now()), hide = $("hidePast").checked;
+  const list = EVENTS.filter(e => !filterCode || e.code === filterCode);
+  const doneN = list.filter(e => checked[e.id]).length;
+  $("pobytMeta").textContent = `${list.length} ${plural(list.length,"termín","termíny","termínov")} · hotovo ${doneN}`;
+  let html = "";
+  WEEKS.forEach(([from, to], wi) => {
+    const days = DAYS.filter(d => d >= from && d <= to && (!hide || d >= today));
+    let block = "";
+    for (const d of days) {
+      const its = BY_DATE[d].filter(e => !filterCode || e.code === filterCode);
+      if (!its.length) continue;
+      block += `<div class="dcard ${d === today ? "isToday" : ""} ${d < today ? "isPast" : ""}">
+        <button type="button" class="dhead" data-open="${d}"><b>${d === today ? "Dnes · " : ""}${cap(WD[wdOf(d)])} ${dayShort(d)}</b><span>${its.length} ${plural(its.length,"procedúra","procedúry","procedúr")} ›</span></button>
+        ${its.map(e => `<div class="row ${checked[e.id] ? "done" : ""}" style="--c:${CAT_COLOR[e.cat]}"><span class="tm tnum">${e.time}</span><i></i><span class="nm">${esc(e.name)}</span><span class="pl">${esc(e.place.replace(" Miľanová","").replace("Laseroterapia ","Laser "))}</span></div>`).join("")}
+      </div>`;
+    }
+    if (block) html += `<div class="week"><h3>${wi + 1}. týždeň · ${dayShort(from)} – ${dayShort(to)}</h3>${block}</div>`;
+  });
+  $("weeks").innerHTML = html || `<div class="card muted">Žiadne ďalšie termíny pre tento výber.</div>`;
+}
+
+/* ---------- PREHĽAD ---------- */
+function renderStats(){
+  const n = now(), done = EVENTS.filter(e => checked[e.id]).length;
+  const left = EVENTS.filter(e => e.start > n).length;
+  const daysLeft = DAYS.filter(d => d >= localDate(n)).length;
+  $("kpis").innerHTML = `<div class="kpi"><b class="tnum">${TOTAL}</b><span>procedúr spolu</span></div>
+    <div class="kpi"><b class="tnum">${left}</b><span>ešte ťa čaká</span></div>
+    <div class="kpi"><b class="tnum">${daysLeft}</b><span>${plural(daysLeft,"deň","dni","dní")} liečby</span></div>`;
+  $("totalBar").style.width = (done * 100 / TOTAL) + "%";
+  $("totalText").textContent = `Odškrtnuté ${done} z ${TOTAL} (${Math.round(done * 100 / TOTAL)} %)`;
+  const by = {}; for (const e of EVENTS) (by[e.code] ??= []).push(e);
+  const codes = Object.keys(by).sort((a,b) => by[b].length - by[a].length || PROC[a].name.localeCompare(PROC[b].name,"sk"));
+  $("perProc").innerHTML = codes.map(c => {
+    const arr = by[c], d = arr.filter(e => checked[e.id]).length, p = PROC[c];
+    const nx = arr.find(e => e.start > n);
+    return `<div class="prow" style="--c:${CAT_COLOR[p.cat]}"><div class="top2"><span class="nm"><i></i>${esc(p.name)}</span><span class="cnt tnum">${d} / ${arr.length}</span></div>
+      <div class="bar"><b style="width:${d * 100 / arr.length}%"></b></div>
+      <div class="nx">${esc(p.place)}${p.dur ? " · " + p.dur + " min" : ""}${p.temp ? " · " + p.temp + " °C" : ""}${nx ? ` · ďalšia ${WD_SHORT[wdOf(nx.date)]} ${dayShort(nx.date)} ${nx.time}` : " · všetky termíny prešli"}</div></div>`;
+  }).join("");
+  $("perWeek").innerHTML = WEEKS.map(([f, t], i) => {
+    const arr = EVENTS.filter(e => e.date >= f && e.date <= t), d = arr.filter(e => checked[e.id]).length;
+    const busiest = Math.max(...DAYS.filter(x => x >= f && x <= t).map(x => BY_DATE[x].length));
+    return `<div class="prow" style="--c:var(--accent)"><div class="top2"><span class="nm">${i + 1}. týždeň · ${dayShort(f)}–${dayShort(t)}</span><span class="cnt tnum">${d} / ${arr.length}</span></div>
+      <div class="bar"><b style="width:${d * 100 / arr.length}%"></b></div><div class="nx">najviac ${busiest} procedúr za deň</div></div>`;
+  }).join("");
+  const places = {}; for (const e of EVENTS) places[e.place] = (places[e.place] || 0) + 1;
+  $("perPlace").innerHTML = Object.entries(places).sort((a,b) => b[1] - a[1]).map(([p, c]) =>
+    `<div class="prow"><div class="top2" style="margin:0"><span class="nm">${esc(p)}</span><span class="cnt tnum">${c}×</span></div></div>`).join("");
+}
+
+/* ---------- INFO ---------- */
+/* Popisy podľa verejného webu ústavu (marinakovacova.sk); údaje z preukazu majú prednosť */
+const W = "https://marinakovacova.sk/";
+const PROC_INFO = {
+  LTV: {text:"Cvičenie s fyzioterapeutom – hlavné zameranie fyzioterapie v Maríne. Individuálna LTV je jeden na jedného s fyzioterapeutom.", tip:"Pohodlné oblečenie na cvičenie a obuv/ponožky.", src:W+"o-nas/"},
+  HKT: {text:"Liečebné cvičenie vo vode pod vedením fyzioterapeuta; voda nadľahčuje telo a odľahčuje kĺby.", tip:"Plavky, kúpacia čiapka, uterák, šľapky. Ide hneď pred/po bazéne – zostaň v plavkách.", src:W+"procedury-a-terapie/"},
+  RB:  {text:"Pohyb a cvičenie v rehabilitačnom bazéne s teplotou 31 °C (podľa preukazu, 20 min).", tip:"Plavky, kúpacia čiapka, uterák, šľapky.", src:W+"cennik-platenych-procedur/"},
+  LMB: {text:"Bazén s termálnou minerálnou vodou z prameňa K2. Voda nadľahčuje telo, uvoľňuje svalové napätie a odľahčuje kĺby a chrbticu. Podľa preukazu 36 °C, 20 min.", tip:"Plavky, čiapka, uterák. Po kúpeli si oddýchni a doplň tekutiny.", src:W+"mineralny-bazen/"},
+  KN:  {text:"Striedavé ponáranie nôh do teplej a studenej vody v niekoľkých cykloch, končí sa studenou. Podporuje prekrvenie končatín. Trvá 10 min.", tip:"Šľapky a uterák; často nasleduje hneď bazén.", src:W+"kneippov-kupel/"},
+  KV:  {text:"Vodoliečebná procedúra vo vani (vodoliečba). Podrobný popis na webe ústavu nie je – na detaily sa opýtaj personálu.", tip:"Uterák a šľapky.", src:W+"cennik-platenych-procedur/"},
+  VK:  {text:"Vírivý kúpeľ dolných končatín (DKK). Vírivá voda uvoľňuje svalové napätie a podporuje krvný obeh.", tip:"Pohodlné nohavice, ktoré sa dajú vyhrnúť, a uterák.", src:W+"procedury-a-terapie/"},
+  PK:  {text:"Celkový kúpeľ s jemnými bublinkami vzduchu – relaxačná a uvoľňujúca procedúra.", tip:"Uterák a šľapky.", src:W+"novinka-nove-procedury-v-marine-2/"},
+  TT:  {text:"Liečba teplom pomocou obkladov a zábalov, ktoré prehrejú a prekrvia svaly. Podľa preukazu na chrbát.", tip:"Po procedúre nechoď hneď von na zimu.", src:W+"procedury-a-terapie/"},
+  MAS: {text:"Klasická masáž uvoľňuje svalové napätie a podporuje krvný obeh. Podľa preukazu chrbát, 15 min.", tip:"Uterák; príď včas, 15 min ubehne rýchlo.", src:W+"klasicka-masaz/"},
+  LAS: {text:"Ústav používa najmä vysokointenzívny laser – pri bolestiach, zápaloch šliach a opuchoch po úrazoch a operáciách. Podľa preukazu oblasť PČK.", tip:"Ošetrovanú oblasť maj ľahko prístupnú.", src:W+"laseroterapia/"}
+};
+function renderInfo(){
+  const by = {}; for (const e of EVENTS) by[e.code] = (by[e.code] || 0) + 1;
+  $("procInfo").innerHTML = Object.keys(PROC).sort((a,b) => by[b] - by[a]).map(c => {
+    const p = PROC[c], inf = PROC_INFO[c];
+    const facts = [`${by[c]}× počas pobytu`, p.place, p.dur ? `${p.dur} min` : "trvanie neuvedené", p.temp ? `${p.temp} °C` : "", p.note ? `oblasť: ${p.note}` : ""].filter(Boolean).join(" · ");
+    return `<details style="--c:${CAT_COLOR[p.cat]}"><summary><i></i>${esc(p.name)}</summary><p class="muted">${esc(facts)}</p>${inf ? `<p>${esc(inf.text)}</p>${inf.tip ? `<p><b>Tip:</b> ${esc(inf.tip)}</p>` : ""}${inf.src ? `<p class="src">Zdroj: <a href="${esc(inf.src)}" target="_blank" rel="noopener">${esc(inf.src.replace(/^https?:\/\//,""))}</a></p>` : ""}` : ""}</details>`;
+  }).join("");
+}
+function icsHref(){
+  const v = $("alarm").value;
+  if (/^https?:$/.test(location.protocol)) return `kalendar-${v === "0" ? "bez" : v}.ics`;
+  return null;
+}
+$("icsBtn").addEventListener("click", ev => {
+  const v = $("alarm").value, alarms = v === "0" ? [] : v.split("-").map(Number);
+  const href = icsHref();
+  if (href) { $("icsBtn").setAttribute("href", href); return; } /* nechaj prehliadač otvoriť súbor */
+  ev.preventDefault();
+  const blob = new Blob([buildICS(EVENTS, alarms)], {type:"text/calendar;charset=utf-8"});
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "kupele-procedury.ics";
+  document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+});
+$("alarm").addEventListener("change", () => { const h = icsHref(); if (h) $("icsBtn").setAttribute("href", h); });
+$("csvBtn").addEventListener("click", () => {
+  const rows = [["Dátum","Deň","Čas","Príchod","Procedúra","Miesto","Poznámka","Stav"], ...EVENTS.map(e =>
+    [e.date, WD[wdOf(e.date)], e.time, e.arrival, e.name, e.place, e.note || "", checked[e.id] ? "Absolvované" : "Naplánované"])];
+  const csv = "\ufeff" + rows.map(r => r.map(s => `"${String(s).replace(/"/g,'""')}"`).join(";")).join("\r\n");
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([csv], {type:"text/csv;charset=utf-8"}));
+  a.download = "moje-procedury.csv"; document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+});
+$("resetBtn").addEventListener("click", () => { if (confirm("Naozaj zrušiť všetky odškrtnutia?")) { checked = {}; save(); renderAll(); toast("Odškrtnutia zrušené"); } });
+
+/* ---------- ovládanie ---------- */
+let toastT; function toast(msg){ const t = $("toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("show"), 1800); }
+function setView(v){
+  view = v;
+  document.querySelectorAll(".view").forEach(s => s.classList.toggle("on", s.id === "v-" + v));
+  document.querySelectorAll("nav.tabs button").forEach(b => b.classList.toggle("on", b.dataset.view === v));
+  renderAll(); window.scrollTo({top: 0});
+  if (v === "dnes") scrollStrip(false);
+}
+function selectDay(d, smooth){ selDate = d; renderStrip(); renderDay(); scrollStrip(smooth); }
+function renderAll(){
+  renderHero();
+  if (view === "dnes") { renderStrip(); renderDay(); }
+  if (view === "pobyt") renderPobyt();
+  if (view === "prehlad") renderStats();
+  if (view === "info") renderInfo();
+}
+document.querySelectorAll("nav.tabs button").forEach(b => b.addEventListener("click", () => setView(b.dataset.view)));
+$("strip").addEventListener("click", ev => { const b = ev.target.closest("[data-day]"); if (b) selectDay(b.dataset.day, true); });
+$("dayList").addEventListener("click", ev => {
+  const b = ev.target.closest("[data-check]"); if (!b) return;
+  const id = +b.dataset.check; checked[id] = !checked[id]; if (!checked[id]) delete checked[id]; save();
+  renderStrip(); renderDay(); renderHero();
+  if (checked[id]) { const e = EVENTS[id - 1]; toast(`✓ ${e.name} – absolvované`); if (navigator.vibrate) navigator.vibrate(15); }
+});
+$("prevDay").addEventListener("click", () => { const i = DAYS.indexOf(selDate); if (i > 0) selectDay(DAYS[i-1], true); });
+$("nextDay").addEventListener("click", () => { const i = DAYS.indexOf(selDate); if (i < DAYS.length - 1) selectDay(DAYS[i+1], true); });
+$("goToday").addEventListener("click", () => selectDay(todayInStay(), true));
+$("chips").addEventListener("click", ev => { const b = ev.target.closest("[data-code]"); if (b) { filterCode = b.dataset.code; renderPobyt(); } });
+$("hidePast").addEventListener("change", renderPobyt);
+$("weeks").addEventListener("click", ev => { const b = ev.target.closest("[data-open]"); if (b) { selDate = b.dataset.open; setView("dnes"); } });
+$("hero").addEventListener("click", () => { if (view !== "dnes") { selDate = todayInStay(); setView("dnes"); } });
+
+selDate = todayInStay();
+const h0 = icsHref(); if (h0) $("icsBtn").setAttribute("href", h0);
+renderAll(); scrollStrip(false);
+setInterval(renderHero, 20000);
+document.addEventListener("visibilitychange", () => { if (!document.hidden) { if (view === "dnes" && selDate < localDate(now()) ) selDate = todayInStay(); renderAll(); } });
+if ("serviceWorker" in navigator && /^https?:$/.test(location.protocol)) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+</body>
+</html>

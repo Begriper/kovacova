@@ -1,0 +1,1352 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//kupele-procedury//SK
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Kúpele Kováčová – procedúry
+X-WR-TIMEZONE:Europe/Bratislava
+BEGIN:VEVENT
+UID:kovacova-2026-001@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261116T123000Z
+DTEND:20261116T125000Z
+SUMMARY:Rehabilitačný bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 13:25 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 31 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:13:30 Rehabilitačný bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-002@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261116T130000Z
+DTEND:20261116T132000Z
+SUMMARY:Kanadská vaňa
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 13:55 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:14:00 Kanadská vaňa – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-003@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261117T083000Z
+DTEND:20261117T085000Z
+SUMMARY:Vírivý kúpeľ DKK (dolné končatiny)
+LOCATION:Vodoliečba B2 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 09:25 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: dolné končatiny.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:09:30 Vírivý kúpeľ DKK – Vodoliečba B2
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-004@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261117T100000Z
+DTEND:20261117T102000Z
+SUMMARY:Termoterapia (chrbát)
+LOCATION:Vodoliečba B2 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 10:55 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: chrbát.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:11:00 Termoterapia – Vodoliečba B2
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-005@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261117T123000Z
+DTEND:20261117T125000Z
+SUMMARY:Liečebný minerálny bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 13:25 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 36 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:13:30 Liečebný minerálny bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-006@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261118T114000Z
+DTEND:20261118T115500Z
+SUMMARY:Klasická masáž (chrbát)
+LOCATION:B3 Fodor – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:35 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: chrbát.\nTrvanie 15 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:12:40 Klasická masáž – B3 Fodor
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-007@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261118T123000Z
+DTEND:20261118T125000Z
+SUMMARY:Liečebný minerálny bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 13:25 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 36 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:13:30 Liečebný minerálny bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-008@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261119T080000Z
+DTEND:20261119T082000Z
+SUMMARY:Vírivý kúpeľ DKK (dolné končatiny)
+LOCATION:Vodoliečba B2 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 08:55 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: dolné končatiny.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:09:00 Vírivý kúpeľ DKK – Vodoliečba B2
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-009@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261119T114000Z
+DTEND:20261119T115500Z
+SUMMARY:Klasická masáž (chrbát)
+LOCATION:B3 Fodor – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:35 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: chrbát.\nTrvanie 15 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:12:40 Klasická masáž – B3 Fodor
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-010@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261119T123000Z
+DTEND:20261119T125000Z
+SUMMARY:Rehabilitačný bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 13:25 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 31 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:13:30 Rehabilitačný bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-011@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261120T090000Z
+DTEND:20261120T092000Z
+SUMMARY:Termoterapia (chrbát)
+LOCATION:Vodoliečba B2 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 09:55 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: chrbát.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:10:00 Termoterapia – Vodoliečba B2
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-012@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261120T123000Z
+DTEND:20261120T124000Z
+SUMMARY:Kneippov kúpeľ
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 13:25 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie 10 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:13:30 Kneippov kúpeľ – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-013@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261120T130000Z
+DTEND:20261120T132000Z
+SUMMARY:Kanadská vaňa
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 13:55 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:14:00 Kanadská vaňa – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-014@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261121T124500Z
+DTEND:20261121T125500Z
+SUMMARY:Kneippov kúpeľ
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 13:40 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie 10 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:13:45 Kneippov kúpeľ – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-015@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261121T130000Z
+DTEND:20261121T132000Z
+SUMMARY:Liečebný minerálny bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 13:55 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 36 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:14:00 Liečebný minerálny bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-016@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261122T092000Z
+DTEND:20261122T094000Z
+SUMMARY:Liečebný minerálny bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 10:15 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 36 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:10:20 Liečebný minerálny bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-017@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261123T083000Z
+DTEND:20261123T085000Z
+SUMMARY:Termoterapia (chrbát)
+LOCATION:Vodoliečba B2 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 09:25 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: chrbát.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:09:30 Termoterapia – Vodoliečba B2
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-018@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261123T120000Z
+DTEND:20261123T122000Z
+SUMMARY:Kanadská vaňa
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:55 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:13:00 Kanadská vaňa – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-019@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261123T123000Z
+DTEND:20261123T125000Z
+SUMMARY:Liečebný minerálny bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 13:25 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 36 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:13:30 Liečebný minerálny bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-020@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261124T080000Z
+DTEND:20261124T082000Z
+SUMMARY:Termoterapia (chrbát)
+LOCATION:Vodoliečba B2 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 08:55 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: chrbát.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:09:00 Termoterapia – Vodoliečba B2
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-021@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261124T093000Z
+DTEND:20261124T095000Z
+SUMMARY:Vírivý kúpeľ DKK (dolné končatiny)
+LOCATION:Vodoliečba B2 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 10:25 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: dolné končatiny.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:10:30 Vírivý kúpeľ DKK – Vodoliečba B2
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-022@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261124T113000Z
+DTEND:20261124T115000Z
+SUMMARY:Liečebná TV (individuálna)
+LOCATION:ILTV B2 Miľanová – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:25 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: individuálna.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:12:30 Liečebná TV – ILTV B2 Miľanová
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-023@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261125T113000Z
+DTEND:20261125T115000Z
+SUMMARY:Liečebná TV (individuálna)
+LOCATION:ILTV B2 Miľanová – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:25 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: individuálna.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:12:30 Liečebná TV – ILTV B2 Miľanová
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-024@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261125T123000Z
+DTEND:20261125T124000Z
+SUMMARY:Kneippov kúpeľ
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 13:25 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie 10 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:13:30 Kneippov kúpeľ – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-025@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261125T130000Z
+DTEND:20261125T132000Z
+SUMMARY:Rehabilitačný bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 13:55 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 31 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:14:00 Rehabilitačný bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-026@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261126T074000Z
+DTEND:20261126T075500Z
+SUMMARY:Klasická masáž (chrbát)
+LOCATION:B3 Fodor – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 08:35 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: chrbát.\nTrvanie 15 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:08:40 Klasická masáž – B3 Fodor
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-027@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261126T100000Z
+DTEND:20261126T102000Z
+SUMMARY:Perličkový kúpeľ
+LOCATION:Vodoliečba B2 ZD – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 10:55 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:11:00 Perličkový kúpeľ – Vodoliečba B2 ZD
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-028@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261126T113000Z
+DTEND:20261126T115000Z
+SUMMARY:Liečebná TV (individuálna)
+LOCATION:ILTV B2 Miľanová – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:25 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: individuálna.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:12:30 Liečebná TV – ILTV B2 Miľanová
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-029@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261126T130000Z
+DTEND:20261126T132000Z
+SUMMARY:Liečebný minerálny bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 13:55 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 36 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:14:00 Liečebný minerálny bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-030@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261127T070000Z
+DTEND:20261127T072000Z
+SUMMARY:Liečebná TV (individuálna)
+LOCATION:ILTV B2 Miľanová – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 07:55 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: individuálna.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:08:00 Liečebná TV – ILTV B2 Miľanová
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-031@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261127T120000Z
+DTEND:20261127T121000Z
+SUMMARY:Kneippov kúpeľ
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:55 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie 10 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:13:00 Kneippov kúpeľ – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-032@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261127T123000Z
+DTEND:20261127T125000Z
+SUMMARY:Liečebný minerálny bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 13:25 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 36 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:13:30 Liečebný minerálny bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-033@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261127T134000Z
+DTEND:20261127T140000Z
+SUMMARY:Laseroterapia (PČK)
+LOCATION:Laseroterapia B2 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 14:35 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: PČK.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:14:40 Laseroterapia – Laseroterapia B2
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-034@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261128T092000Z
+DTEND:20261128T094000Z
+SUMMARY:Liečebný minerálny bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 10:15 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 36 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:10:20 Liečebný minerálny bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-035@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261129T113000Z
+DTEND:20261129T114000Z
+SUMMARY:Kneippov kúpeľ
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:25 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie 10 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:12:30 Kneippov kúpeľ – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-036@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261129T120000Z
+DTEND:20261129T122000Z
+SUMMARY:Liečebný minerálny bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:55 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 36 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:13:00 Liečebný minerálny bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-037@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261130T070000Z
+DTEND:20261130T072000Z
+SUMMARY:Perličkový kúpeľ
+LOCATION:Vodoliečba B2 ZD – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 07:55 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:08:00 Perličkový kúpeľ – Vodoliečba B2 ZD
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-038@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261130T073000Z
+DTEND:20261130T075000Z
+SUMMARY:Termoterapia (chrbát)
+LOCATION:Vodoliečba B2 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 08:25 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: chrbát.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:08:30 Termoterapia – Vodoliečba B2
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-039@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261130T094500Z
+DTEND:20261130T100500Z
+SUMMARY:Rehabilitačný bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 10:40 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 31 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:10:45 Rehabilitačný bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-040@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261130T122000Z
+DTEND:20261130T124000Z
+SUMMARY:Laseroterapia (PČK)
+LOCATION:Laseroterapia B2 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 13:15 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: PČK.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:13:20 Laseroterapia – Laseroterapia B2
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-041@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261201T070000Z
+DTEND:20261201T072000Z
+SUMMARY:Liečebná TV (individuálna)
+LOCATION:ILTV B2 Miľanová – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 07:55 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: individuálna.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:08:00 Liečebná TV – ILTV B2 Miľanová
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-042@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261201T090000Z
+DTEND:20261201T092000Z
+SUMMARY:Vírivý kúpeľ DKK (dolné končatiny)
+LOCATION:Vodoliečba B2 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 09:55 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: dolné končatiny.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:10:00 Vírivý kúpeľ DKK – Vodoliečba B2
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-043@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261201T130000Z
+DTEND:20261201T132000Z
+SUMMARY:Rehabilitačný bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 13:55 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 31 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:14:00 Rehabilitačný bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-044@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261201T133000Z
+DTEND:20261201T135000Z
+SUMMARY:Hydrokinezioterapia
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 14:25 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:14:30 Hydrokinezioterapia – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-045@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261202T093000Z
+DTEND:20261202T095000Z
+SUMMARY:Perličkový kúpeľ
+LOCATION:Vodoliečba B2 ZD – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 10:25 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:10:30 Perličkový kúpeľ – Vodoliečba B2 ZD
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-046@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261202T113000Z
+DTEND:20261202T115000Z
+SUMMARY:Liečebná TV (individuálna)
+LOCATION:ILTV B2 Miľanová – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:25 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: individuálna.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:12:30 Liečebná TV – ILTV B2 Miľanová
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-047@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261202T130000Z
+DTEND:20261202T132000Z
+SUMMARY:Rehabilitačný bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 13:55 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 31 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:14:00 Rehabilitačný bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-048@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261202T133000Z
+DTEND:20261202T135000Z
+SUMMARY:Hydrokinezioterapia
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 14:25 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:14:30 Hydrokinezioterapia – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-049@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261203T070000Z
+DTEND:20261203T072000Z
+SUMMARY:Liečebná TV (individuálna)
+LOCATION:ILTV B2 Miľanová – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 07:55 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: individuálna.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:08:00 Liečebná TV – ILTV B2 Miľanová
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-050@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261203T084000Z
+DTEND:20261203T085500Z
+SUMMARY:Klasická masáž (chrbát)
+LOCATION:B3 Fodor – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 09:35 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: chrbát.\nTrvanie 15 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:09:40 Klasická masáž – B3 Fodor
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-051@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261203T123000Z
+DTEND:20261203T125000Z
+SUMMARY:Rehabilitačný bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 13:25 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 31 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:13:30 Rehabilitačný bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-052@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261204T070000Z
+DTEND:20261204T072000Z
+SUMMARY:Perličkový kúpeľ
+LOCATION:Vodoliečba B2 ZD – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 07:55 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:08:00 Perličkový kúpeľ – Vodoliečba B2 ZD
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-053@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261204T090000Z
+DTEND:20261204T092000Z
+SUMMARY:Termoterapia (chrbát)
+LOCATION:Vodoliečba B2 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 09:55 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: chrbát.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:10:00 Termoterapia – Vodoliečba B2
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-054@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261204T113000Z
+DTEND:20261204T115000Z
+SUMMARY:Liečebná TV (individuálna)
+LOCATION:ILTV B2 Miľanová – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:25 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: individuálna.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:12:30 Liečebná TV – ILTV B2 Miľanová
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-055@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261204T124000Z
+DTEND:20261204T130000Z
+SUMMARY:Kanadská vaňa
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 13:35 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:13:40 Kanadská vaňa – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-056@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261204T134000Z
+DTEND:20261204T140000Z
+SUMMARY:Laseroterapia (PČK)
+LOCATION:Laseroterapia B2 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 14:35 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: PČK.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:14:40 Laseroterapia – Laseroterapia B2
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-057@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261205T092000Z
+DTEND:20261205T094000Z
+SUMMARY:Rehabilitačný bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 10:15 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 31 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:10:20 Rehabilitačný bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-058@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261206T091500Z
+DTEND:20261206T092500Z
+SUMMARY:Kneippov kúpeľ
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 10:10 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie 10 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:10:15 Kneippov kúpeľ – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-059@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261206T094500Z
+DTEND:20261206T100500Z
+SUMMARY:Rehabilitačný bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 10:40 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 31 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:10:45 Rehabilitačný bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-060@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261207T073000Z
+DTEND:20261207T075000Z
+SUMMARY:Perličkový kúpeľ
+LOCATION:Vodoliečba B2 ZD – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 08:25 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:08:30 Perličkový kúpeľ – Vodoliečba B2 ZD
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-061@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261207T080000Z
+DTEND:20261207T082000Z
+SUMMARY:Termoterapia (chrbát)
+LOCATION:Vodoliečba B2 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 08:55 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: chrbát.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:09:00 Termoterapia – Vodoliečba B2
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-062@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261207T113000Z
+DTEND:20261207T115000Z
+SUMMARY:Liečebná TV (individuálna)
+LOCATION:ILTV B2 Miľanová – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:25 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: individuálna.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:12:30 Liečebná TV – ILTV B2 Miľanová
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-063@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261207T130000Z
+DTEND:20261207T132000Z
+SUMMARY:Kanadská vaňa
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 13:55 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:14:00 Kanadská vaňa – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-064@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261207T133000Z
+DTEND:20261207T135000Z
+SUMMARY:Hydrokinezioterapia
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 14:25 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:14:30 Hydrokinezioterapia – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-065@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261208T070000Z
+DTEND:20261208T072000Z
+SUMMARY:Liečebná TV (individuálna)
+LOCATION:ILTV B2 Miľanová – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 07:55 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: individuálna.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:08:00 Liečebná TV – ILTV B2 Miľanová
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-066@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261208T091000Z
+DTEND:20261208T092500Z
+SUMMARY:Klasická masáž (chrbát)
+LOCATION:B3 Fodor – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 10:05 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: chrbát.\nTrvanie 15 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:10:10 Klasická masáž – B3 Fodor
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-067@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261208T111000Z
+DTEND:20261208T113000Z
+SUMMARY:Hydrokinezioterapia
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:05 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:12:10 Hydrokinezioterapia – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-068@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261208T113000Z
+DTEND:20261208T115000Z
+SUMMARY:Rehabilitačný bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:25 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 31 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:12:30 Rehabilitačný bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-069@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261209T070000Z
+DTEND:20261209T072000Z
+SUMMARY:Liečebná TV (individuálna)
+LOCATION:ILTV B2 Miľanová – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 07:55 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: individuálna.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:08:00 Liečebná TV – ILTV B2 Miľanová
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-070@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261209T111000Z
+DTEND:20261209T113000Z
+SUMMARY:Hydrokinezioterapia
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:05 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:12:10 Hydrokinezioterapia – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-071@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261209T113000Z
+DTEND:20261209T115000Z
+SUMMARY:Liečebný minerálny bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:25 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 36 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:12:30 Liečebný minerálny bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-072@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261209T132000Z
+DTEND:20261209T134000Z
+SUMMARY:Laseroterapia (PČK)
+LOCATION:Laseroterapia B2 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 14:15 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: PČK.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:14:20 Laseroterapia – Laseroterapia B2
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-073@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261210T073000Z
+DTEND:20261210T075000Z
+SUMMARY:Perličkový kúpeľ
+LOCATION:Vodoliečba B2 ZD – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 08:25 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:08:30 Perličkový kúpeľ – Vodoliečba B2 ZD
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-074@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261210T091000Z
+DTEND:20261210T092500Z
+SUMMARY:Klasická masáž (chrbát)
+LOCATION:B3 Fodor – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 10:05 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: chrbát.\nTrvanie 15 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:10:10 Klasická masáž – B3 Fodor
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-075@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261210T111000Z
+DTEND:20261210T113000Z
+SUMMARY:Hydrokinezioterapia
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:05 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:12:10 Hydrokinezioterapia – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-076@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261210T113000Z
+DTEND:20261210T115000Z
+SUMMARY:Rehabilitačný bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:25 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 31 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:12:30 Rehabilitačný bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-077@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261211T070000Z
+DTEND:20261211T072000Z
+SUMMARY:Liečebná TV (individuálna)
+LOCATION:ILTV B2 Miľanová – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 07:55 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: individuálna.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:08:00 Liečebná TV – ILTV B2 Miľanová
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-078@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261211T083000Z
+DTEND:20261211T085000Z
+SUMMARY:Vírivý kúpeľ DKK (dolné končatiny)
+LOCATION:Vodoliečba B2 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 09:25 (5 min vopred). Vezmi kúpeľný preukaz.\nPoz
+ námka: dolné končatiny.\nTrvanie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:09:30 Vírivý kúpeľ DKK – Vodoliečba B2
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-079@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261211T111000Z
+DTEND:20261211T113000Z
+SUMMARY:Hydrokinezioterapia
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:05 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie na preukaze neuvedené.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:12:10 Hydrokinezioterapia – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-080@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261211T113000Z
+DTEND:20261211T115000Z
+SUMMARY:Liečebný minerálny bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:25 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 36 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:12:30 Liečebný minerálny bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-081@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261212T111500Z
+DTEND:20261212T112500Z
+SUMMARY:Kneippov kúpeľ
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:10 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie 10 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:12:15 Kneippov kúpeľ – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-082@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261212T113000Z
+DTEND:20261212T115000Z
+SUMMARY:Rehabilitačný bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:25 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 31 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:12:30 Rehabilitačný bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-083@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261213T111500Z
+DTEND:20261213T112500Z
+SUMMARY:Kneippov kúpeľ
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:10 (5 min vopred). Vezmi kúpeľný preukaz.\nTrv
+ anie 10 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:12:15 Kneippov kúpeľ – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kovacova-2026-084@procedury
+DTSTAMP:20261116T100000Z
+DTSTART:20261213T113000Z
+DTEND:20261213T115000Z
+SUMMARY:Liečebný minerálny bazén
+LOCATION:Bazén B3 – ŠLÚ Marína Kováčová
+DESCRIPTION:Príď o 12:25 (5 min vopred). Vezmi kúpeľný preukaz.\nTep
+ lota 36 °C.\nTrvanie 20 min.
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:12:30 Liečebný minerálny bazén – Bazén B3
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
